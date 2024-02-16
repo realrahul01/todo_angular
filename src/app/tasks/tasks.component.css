@@ -6,6 +6,15 @@
     box-sizing: border-box;
 }
 
+.task {
+    display: flex;
+    align-items: center;
+  }
+  
+  .completed #taskname {
+    text-decoration: line-through;
+  }
+
 body {
     height: 100vh;
     background-color: #f0f2f5;
@@ -94,3 +103,7 @@ p span{
     cursor: pointer;
     padding: 7px 7px;
 }
+
+
+  
+  

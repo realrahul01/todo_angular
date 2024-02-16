@@ -5,12 +5,13 @@
     <button id="push" (click)="addTask()">Add</button>
   </div>
   <div id="tasks">
-    <div class="task" *ngFor="let task of tasks">
+    <div class="task" *ngFor="let task of tasks; let i = index" [class.completed]="task.completed">
       <span id="taskname">
-        {{ task }}
+        {{ task.name }}
       </span>
-      <button class="delete" (click)="deleteTask(task)">delete</button>
-      <button class="delete" (click)="editTask(task)">Edit</button>
+      <button class="delete" (click)="deleteTask(i)">Delete</button>
+      <button class="edit" (click)="editTask(i)">Edit</button>
+      <button class="complete" (click)="markAsCompleted(i)">{{ task.completed ? 'Undo' : 'Complete' }}</button>
     </div>
   </div>
 </div>
