@@ -21,9 +21,14 @@ export class TasksComponent {
    
   }
 
-  editTask(task:string){
-    this.newTask=task;
-   
+  editTask(task: string): void {
+    const index = this.tasks.indexOf(task); 
+    if (index !== -1) { 
+      const editedTask = prompt('Edit task:', task); 
+      if (editedTask !== null) {
+        this.tasks[index] = editedTask; 
+      }
+    }
   }
 
 
