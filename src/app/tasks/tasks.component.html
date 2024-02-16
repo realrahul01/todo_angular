@@ -1,0 +1,16 @@
+<div class="container">
+  <p class="head">Todo-<span>app</span></p>
+  <div id="newtask">
+    <input [(ngModel)]="newTask" type="text" placeholder="Add Tasks" />
+    <button id="push" (click)="addTask()">Add</button>
+  </div>
+  <div id="tasks">
+    <div class="task" *ngFor="let task of tasks">
+      <span id="taskname">
+        {{ task }}
+      </span>
+      <button class="delete" (click)="deleteTask(task)">delete</button>
+      <button class="delete" (click)="editTask(task)">Edit</button>
+    </div>
+  </div>
+</div>
